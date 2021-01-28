@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//기존의 문제 풀이:
+//처음부터 탐색하면서 i가 1이상일때 i-1번째와 i번째 비교해서 같으면 i-1번째 불러옴
 vector<int> solution(vector<int> arr)
 {
     vector<int> answer;
@@ -21,4 +23,13 @@ vector<int> solution(vector<int> arr)
     answer.push_back(arr[arr.size()-1]);
 
     return answer;
+}
+
+//새로운 문제 풀이:
+//STL Library 사용해 한줄 컷
+//erase()와 unique()로 중복 제거
+vector<int> solution(vector<int> arr)
+{
+    arr.erase(unique(arr.begin(), arr.end()), arr.end());
+    return arr;
 }
