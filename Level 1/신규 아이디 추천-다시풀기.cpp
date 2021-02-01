@@ -29,7 +29,7 @@ string solution(string new_id) {
     for(int i=0;i<new_id.length();i++) {
         new_id.erase(unique(new_id.begin(),new_id.end(),[=](const auto &c1, const auto &c2) {return c1 == c && c2 ==c;}),new_id.end());
     }
- 
+
     //앞뒤로 .가 위치하면 제거
     if(new_id[0] == '.')
         new_id[0] = NULL;
